@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upload - Facial Recognition System</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+
+  </head>
+  <body>
+    <div class="mainDiv">
+      <div class="titleDiv">
+        <h1>Xehen</h1>
+        <h2>Facial Recognition System</h2>
+      </div>
+      <div class="formDiv">
+        <form
+          id="upload-form"
+          action="{{ url_for('upload') }}"
+          method="POST"
+          enctype="multipart/form-data"
+          class="form"
+        >
+          <strong>Files:</strong><br />
+          <input
+            id="file-picker"
+            type="file"
+            name="file"
+            accept="image/*"
+            multiple
+            class="eleMarginTop"
+          />
+          <div id="msg" class="eleMarginTop"></div>
+          <label for="PersonName" class="eleMarginTop"  >Person Name</label>
+          <input type="text" name="PersonName" />
+          <input type="submit" value="Upload!" id="upload-button" />
+          <div id="successFile">
+            <h3>Uploaded Successfully!</h3>
+          </div>
+        </form>
+
+        <form
+          id="predict-form"
+          action="{{ url_for('predict') }}"
+          method="POST"
+          enctype="multipart/form-data"
+          class="form formMarginTop"
+        >
+          <strong>Upload File For Prediction:</strong><br />
+          <input
+            id="predict_file"
+            type="file"
+            name="predict_file"
+            accept="image/*"
+            class="eleMarginTop"
+          />
+          <div id="msg"></div>
+          <input
+            type="submit"
+            value="Predict!"
+            id="predict-button"
+            class="eleMarginTop"
+          />
+        </form>
+        <div class="form formMarginTop">
+          <strong>Live Detection:</strong><br />
+          <button class="btnMarginTop" onclick="window.location.href='video_feed'">Test</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    $("#file-picker").change(function() {
+      var input = document.getElementById("file-picker");
+
+      for (var i = 0; i < input.files.length; i++) {
+        //koala.jpg, koala.JPG substring(index) lastIndexOf('a') koala.1.jpg
+        var ext = input.files[i].name
+          .substring(input.files[i].name.lastIndexOf(".") + 1)
+          .toLowerCase();
+
+        if (ext == "jpg" || ext == "png" || ext == "jpeg") {
+          $("#msg").text("Files are supported");
+        } else {
+          $("#msg").text("Files are NOT supported");
+          document.getElementById("file-picker").value = "";
+        }
+      }
+    });
+  </script>
+</html>

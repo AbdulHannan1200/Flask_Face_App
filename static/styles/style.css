@@ -1,0 +1,48 @@
+body {
+  background-color: #1c1c1c;
+  font-family: "Montserrat", sans-serif;
+}
+.mainDiv {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.titleDiv {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.titleDiv * {
+  margin: 5px;
+}
+.formDiv {
+  border: 1px solid #b1585c;
+  background-color: #fff;
+  padding: 50px;
+}
+.formMarginTop {
+  margin-top: 25px;
+}
+.eleMarginTop {
+  margin-top: 10px;
+}
+input[type="button"],
+input[type="submit"], button {
+  background-color: #b1585c;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+#successFile{
+  color: #b1585c;
+}
+.result{
+  text-align: center;
+}
+.btnMarginTop{
+  margin-top: 10px;
+}
