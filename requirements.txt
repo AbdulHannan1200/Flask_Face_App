@@ -6,7 +6,7 @@ cv2 == 4.2.0
 face_recognition == 1.2.3
 dlib == 19.19.0 
 scipy == 1.2.1
-tensorflow == 2.0.0
+tensorflow == 2.5.1
 flask_sqlalchemy == 2.1
 pickle == 4.0
 matplotlib == 3.0.3
