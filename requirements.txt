@@ -1,6 +1,6 @@
 Python == 3.7.3
 Flask == 1.0.2
-numpy == 1.16.2
+numpy == 1.22.0
 pandas == 0.24.2
 cv2 == 4.2.0
 face_recognition == 1.2.3
